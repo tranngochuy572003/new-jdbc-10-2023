@@ -106,10 +106,13 @@
     </div>
 </div>
 <script>
-    // var editor = '';
-    // $(document).ready(function(){
-    //     editor = CKEDITOR.replace( 'content');
-    // });
+
+    //tuong tu nhu ham main (tat ca doan code trong document.ready se chay dau tien)
+    var editor = '';
+    $(document).ready(function(){
+        //ckeditor moi , ckeditor(text area)  cu la content
+        editor = CKEDITOR.replace( 'content');
+    });
 
     $('#btnAddOrUpdateNew').click(function (e) {
         e.preventDefault();
@@ -144,6 +147,7 @@
             data: JSON.stringify(data),
             //server tra ve cho client kieu du lieu gi :dataType(result)
             dataType: 'json',
+            //result chinh la newmodel
             success: function (result) {
                 window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=insert_success";
             },

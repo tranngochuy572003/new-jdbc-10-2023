@@ -4,6 +4,7 @@ import com.laptrinhjavaweb.dao.INewDAO;
 import com.laptrinhjavaweb.mapper.NewMapper;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.paging.Pageble;
+import org.apache.commons.lang.StringUtils;
 
 import java.sql.*;
 import java.util.List;
@@ -59,7 +60,7 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
   public List<NewModel> findAll(Pageble pageble) {
    // String sql = "select * from news limit ?,?";
     StringBuilder sql = new StringBuilder("select * from news");
-   if(pageble.getSorter()!=null ){
+   if(pageble.getSorter()!=null && StringUtils.isNotBlank(pageble.getSorter().getSortName()) && StringUtils.isNotBlank(pageble.getSorter().getSortBy())){
      sql.append(" ORDER BY "+pageble.getSorter().getSortName()+" "+pageble.getSorter().getSortBy()+"");
    }
 

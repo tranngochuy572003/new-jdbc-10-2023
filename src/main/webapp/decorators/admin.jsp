@@ -56,6 +56,10 @@
 <script src="<c:url value='/template/admin/assets/js/ace.min.js' />"></script>
 <script src="<c:url value='/template/admin/assets/js/bootstrap.min.js'/>"></script>
 
+
+<script src="<c:url value='/ckeditor/ckeditor.js'/>"></script>
+
+
 <!-- page specific plugin scripts -->
 <script src="<c:url value='/template/admin/assets/js/jquery-ui.min.js'/>"></script>
 </body>
